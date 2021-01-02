@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-
+import RestaurantList from './RestaurantList'
 
 const CuisineList = () => {
     const cuisines = [
@@ -26,17 +26,20 @@ const CuisineList = () => {
     return (
         <>
             {!isSelected ? (
-                <ul>
-                {data.map((cuisine)=>{
-                    const {id, name} = cuisine;
-                    return <li key={id}>
-                                <a href="#" onClick={()=>handleClick(id)}>{name}</a>
-                            </li>
-                })}
-                </ul>  
+                <div>
+                    <h1>Cuisines in Vancouver (BC)</h1>
+                    <ul>
+                    {data.map((cuisine)=>{
+                        const {id, name} = cuisine;
+                        return <li key={id}>
+                                    <a href="#" onClick={()=>handleClick(id)}>{name}</a>
+                                </li>
+                    })}
+                    </ul>  
+                </div>
             )
             :(
-                <h1>Getting Restaurants... for {cusID}</h1>
+                <RestaurantList queryID={cusID}></RestaurantList>
             )}
              
         </>
