@@ -4,7 +4,7 @@ const Restaurant = (props) => {
     const {name, positivity} = props.restaurant
     return (
         <>
-            <h1>{name} // {positivity}</h1>
+            <h1>{name} // {positivity} %</h1>
         </>
     );
 }

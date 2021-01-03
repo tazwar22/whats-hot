@@ -82,15 +82,17 @@ PARAMETERS:
     1) Text
 RETURNS:
     - Dict which maps "Collection NAME" => Collection ID
+    - Dict which maps Collection ID => "Collection NAME"
 '''
 def form_collection_map(collections):
-    id_map = {}
+    id_map, name_map = {} , {}
     for item in collections['collections']:
         #Store stats
         idx, name = item['collection']['collection_id'], item['collection']['title']
         id_map[name] = idx
+        name_map[idx] = name
 
-    return id_map
+    return id_map, name_map
 
 
 '''

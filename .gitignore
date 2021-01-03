@@ -26,5 +26,6 @@ yarn-error.log*
 backend/.env
 backend/config.py 
 backend/main.py 
+backend/models/
 .vscode/
 
