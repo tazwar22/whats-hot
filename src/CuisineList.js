@@ -4,7 +4,7 @@ import Loading from './Loading'
 
 const CuisineList = () => {
     const [data, setData] = useState([]);
-    const [isLoading, setIsLoading] = useState(false)
+    const [isLoading, setIsLoading] = useState(false);
 
     const getCusines = async () =>{
         setIsLoading(true)
