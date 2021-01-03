@@ -36,3 +36,11 @@
     transform: rotate(360deg);
   }
 }
+
+.restaurant {
+  background-color: rgb(146, 128, 128);
+}
+
+.restaurantsList {
+  background-color: rgb(190, 128, 128);
+}

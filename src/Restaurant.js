@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import './App.css';
 
 const Restaurant = (props) => {
     const {name, positivity, reviews} = props.restaurant
@@ -11,7 +12,7 @@ const Restaurant = (props) => {
     if (showReviews){
             return (
             <>
-                <ul>
+                <ul className="restaurant">
                     <li>Name: {name}</li>
                     <li>Positivity Score: {positivity}</li>
                     <button type="button" onClick={()=>clickHandler()}> Hide User Reviews</button>
@@ -27,7 +28,7 @@ const Restaurant = (props) => {
     } else {
          return (
         <>
-            <ul>
+            <ul className="restaurant">
                 <li>Name: {name}</li>
                 <li>Positivity Score: {positivity}</li>
                 <button type="button" onClick={()=>clickHandler()}> Show User Reviews</button>
