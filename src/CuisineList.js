@@ -39,7 +39,10 @@ const CuisineList = () => {
                 </div>
             )
             :(
-                <RestaurantList queryID={cusID}></RestaurantList>
+                <>
+                    <RestaurantList queryID={cusID}></RestaurantList>
+                    <button type="button" onClick={()=>setIsSelected(false)}>Search again</button>
+                </>
             )}
              
         </>
