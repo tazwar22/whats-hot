@@ -1,13 +1,17 @@
 import React, {useState, useEffect} from 'react'
 import RestaurantList from './RestaurantList'
+import Loading from './Loading'
 
 const CuisineList = () => {
     const [data, setData] = useState([]);
+    const [isLoading, setIsLoading] = useState(false)
 
     const getCusines = async () =>{
+        setIsLoading(true)
         const response = await fetch('/api/cuisines');
         const cuisines = await response.json();
         setData(cuisines);
+        setIsLoading(false)
     }
     useEffect(()=>{
         getCusines();
@@ -24,11 +28,12 @@ const CuisineList = () => {
         setIsSelected(true);
     }
 
-    return (
-        <>
-            {!isSelected ? (
-                <div>
-                    <h1>Cuisines in Vancouver (BC)</h1>
+    if (isLoading){
+        return <Loading></Loading>
+    } else if (!isSelected){
+        return (
+            <>
+                <h1>Cuisines in Vancouver (BC)</h1>
                     <ul>
                     {data.map((cuisine)=>{
                         const {id, name} = cuisine;
@@ -37,17 +42,16 @@ const CuisineList = () => {
                                 </li>
                     })}
                     </ul>  
-                </div>
-            )
-            :(
-                <>
-                    <RestaurantList queryID={cusID}></RestaurantList>
-                    <button type="button" onClick={()=>setIsSelected(false)}>Search again</button>
-                </>
-            )}
-             
-        </>
-    );
+            </>
+        );
+    } else {
+        return (
+            <>
+                <RestaurantList queryID={cusID}></RestaurantList>
+                <button type="button" onClick={()=>setIsSelected(false)}>Search again</button>
+            </>
+        );
+    }
 }
 
 export default CuisineList
