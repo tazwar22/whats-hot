@@ -24,4 +24,5 @@ yarn-error.log*
 
 *.pyc
 backend/.env
+.vscode/
 
