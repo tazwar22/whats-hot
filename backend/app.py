@@ -63,6 +63,8 @@ def get_restaurants():
         df = zomato.form_review_df(reviews)
         #Store the ratings
         star_rating = np.mean(df.Rating)
+        #Store the raw reviews
+        raw_reviews  = list(df.text.values)
 
         df = prep.clean_df(df)
         Xtilde = prep.form_pred_matrix(df, scaler, w2vec)
@@ -70,9 +72,9 @@ def get_restaurants():
         df = prep.update_prediction(df, Xtilde, clf)
         positivity = np.round(np.mean(df.prob_like), 2)*100
         
-        mega_df.append([res_id, name, positivity, len(df), star_rating])
+        mega_df.append([res_id, name, positivity, len(df), star_rating, raw_reviews])
         
-    mega_df = pd.DataFrame(mega_df, columns = ["id","name" ,"positivity","num_reviews", "star_rating"]).sort_values('positivity', ascending=False)
+    mega_df = pd.DataFrame(mega_df, columns = ["id","name" ,"positivity","num_reviews", "star_rating","reviews"]).sort_values('positivity', ascending=False)
 
     return mega_df.to_json(orient='records')
 

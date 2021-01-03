@@ -1,10 +1,20 @@
 import React from 'react'
 
 const Restaurant = (props) => {
-    const {name, positivity, star_rating} = props.restaurant
+    const {name, positivity, star_rating, reviews} = props.restaurant
     return (
         <>
-            <h1>{name} // {positivity} % // Rating: {star_rating}</h1>
+            <ul>
+                <li>Name: {name}</li>
+                <li>Positivity Score: {positivity}</li>
+                <li>Star Rating: {star_rating}</li>
+                <ul>
+                    {reviews.map((rev, ii)=>{
+                    return <li key={ii}>{rev}</li>
+                    })}
+                </ul>
+            </ul>
+            <hr></hr>
         </>
     );
 }
