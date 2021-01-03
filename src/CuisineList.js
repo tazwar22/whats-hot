@@ -22,10 +22,13 @@ const CuisineList = () => {
     const [isSelected, setIsSelected] = useState(false);
     //Cusine ID to query
     const [cusID, setCusID] = useState(0);
+    //Cuisine Name being Queried
+    const [cusName, setCusName] = useState("");
 
-    const handleClick = (id) =>{
+    const handleClick = (id, name) =>{
         setCusID(id);
         setIsSelected(true);
+        setCusName(name);
     }
 
     if (isLoading){
@@ -38,7 +41,7 @@ const CuisineList = () => {
                     {data.map((cuisine)=>{
                         const {id, name} = cuisine;
                         return <li key={id}>
-                                    <a href="#" onClick={()=>handleClick(id)}>{name}</a>
+                                    <a href="#" onClick={()=>handleClick(id, name)}>{name}</a>
                                 </li>
                     })}
                     </ul>  
@@ -47,7 +50,7 @@ const CuisineList = () => {
     } else {
         return (
             <>
-                <RestaurantList queryID={cusID}></RestaurantList>
+                <RestaurantList queryID={cusID} name={cusName}></RestaurantList>
                 <button type="button" onClick={()=>setIsSelected(false)}>Search again</button>
             </>
         );

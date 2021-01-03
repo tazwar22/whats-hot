@@ -1,10 +1,10 @@
 import React from 'react'
 
 const Restaurant = (props) => {
-    const {name, positivity} = props.restaurant
+    const {name, positivity, star_rating} = props.restaurant
     return (
         <>
-            <h1>{name} // {positivity} %</h1>
+            <h1>{name} // {positivity} % // Rating: {star_rating}</h1>
         </>
     );
 }
