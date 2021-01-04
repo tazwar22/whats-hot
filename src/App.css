@@ -60,16 +60,41 @@
 Cuisines and CuisinesList 
  ------------------------------*/
 .cuisinesList {
-  background-color: rgb(177, 218, 139);
+  /* background-color: rgb(177, 218, 139); */
   width: 90vw;
-  max-width: 1140px;
-  gap: 5rem;
-  margin: 5rem auto;
+  max-width: 60%;
+  margin: 5rem 20%;
+}
+
+.cuisinesList li {
+  background-color: rgba(219, 205, 193, 0.733);
+  padding: 2px 2px;
+  margin: 3rem 2rem;
+  list-style: none;
+  display: flex;
 }
 
 .cuisinesList img {
-  width: 80px;
-  height: 80px;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin: 5% 15% 5% 15%;
+  border-radius: 80px;
+}
+
+.cuisineInfo {
+  /* background-color: sandybrown; */
+  float: left;
+  width: 500px;
+  max-width: 1140px;
+  overflow: hidden;
+  padding: 2px 15px;
+  margin: 5px 0px 5px 5%;
+  font-size: 150%;
+}
+
+.cuisineInfo a {
+  font-size: 180%;
 }
 
 @media screen and (min-width: 768px) {

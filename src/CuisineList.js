@@ -41,9 +41,11 @@ const CuisineList = () => {
                 {data.map((cuisine)=>{
                     const {id, name, image_url, description} = cuisine;
                     return <li key={id}>
-                                <a href="#" onClick={()=>handleClick(id, name)}>{name}</a>
+                                <div className="cuisineInfo">
+                                    <a href="#" onClick={()=>handleClick(id, name)}>{name}</a>
+                                    <p>{description}</p>
+                                </div>
                                 <img src={image_url} alt="Food"></img>
-                                <h4>{description}</h4>
                             </li>
                 })}
                 </ul>  
