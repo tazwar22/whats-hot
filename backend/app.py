@@ -7,6 +7,7 @@ from gensim.models import Word2Vec
 import text_prep as prep
 import numpy as np
 import pandas as pd
+import json
 
 app = Flask(__name__)
 CORS(app)
@@ -35,11 +36,15 @@ def say_hello_world():
 def get_cusines():
 
     collections = zomato.get_city_collections(search_city)
-    id_map, name_map, img_map = zomato.form_collection_map(collections)
-
     response = []
-    for idx, name in name_map.items():
-        entry = {"id":idx, "name":name, "image_url":img_map[idx]}
+    for item in collections['collections']:
+        #A single Collection Type
+        cuisine = item['collection']
+        #Store stats
+        entry = {"id": cuisine['collection_id'], 
+                 "name" : cuisine['title'], 
+                 "image_url" : cuisine['image_url'],
+                 "description" : cuisine['description']}
         response.append(entry)
 
     return jsonify(response)
