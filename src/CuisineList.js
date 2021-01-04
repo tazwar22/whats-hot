@@ -11,7 +11,7 @@ const CuisineList = () => {
         const response = await fetch('/api/cuisines');
         const cuisines = await response.json();
         setData(cuisines);
-        setIsLoading(false)
+        setIsLoading(false);
     }
     useEffect(()=>{
         getCusines();
@@ -35,17 +35,18 @@ const CuisineList = () => {
         return <Loading></Loading>
     } else if (!isSelected){
         return (
-            <>
+            <div>
                 <h1>Cuisines in Vancouver (BC)</h1>
-                    <ul>
-                    {data.map((cuisine)=>{
-                        const {id, name} = cuisine;
-                        return <li key={id}>
-                                    <a href="#" onClick={()=>handleClick(id, name)}>{name}</a>
-                                </li>
-                    })}
-                    </ul>  
-            </>
+                <ul  className="cuisinesList">
+                {data.map((cuisine)=>{
+                    const {id, name, image_url} = cuisine;
+                    return <li key={id}>
+                                <a href="#" onClick={()=>handleClick(id, name)}>{name}</a>
+                                <img src={image_url} alt="Food"></img>
+                            </li>
+                })}
+                </ul>  
+            </div>
         );
     } else {
         return (

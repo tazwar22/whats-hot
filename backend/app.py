@@ -35,11 +35,11 @@ def say_hello_world():
 def get_cusines():
 
     collections = zomato.get_city_collections(search_city)
-    id_map, name_map = zomato.form_collection_map(collections)
+    id_map, name_map, img_map = zomato.form_collection_map(collections)
 
     response = []
     for idx, name in name_map.items():
-        entry = {"id":idx, "name":name}
+        entry = {"id":idx, "name":name, "image_url":img_map[idx]}
         response.append(entry)
 
     return jsonify(response)

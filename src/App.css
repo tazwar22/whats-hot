@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -37,10 +41,39 @@
   }
 }
 
+/*------------------------------
+ Restaurants and RestaurantsList 
+ ------------------------------*/
 .restaurant {
   background-color: rgb(146, 128, 128);
 }
 
 .restaurantsList {
   background-color: rgb(190, 128, 128);
+  width: 90vw;
+  max-width: 1140px;
+  gap: 5rem;
+  margin: 5rem auto;
+}
+
+/*------------------------------
+Cuisines and CuisinesList 
+ ------------------------------*/
+.cuisinesList {
+  background-color: rgb(177, 218, 139);
+  width: 90vw;
+  max-width: 1140px;
+  gap: 5rem;
+  margin: 5rem auto;
+}
+
+.cuisinesList img {
+  width: 80px;
+  height: 80px;
+}
+
+@media screen and (min-width: 768px) {
+  .cuisinesList {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }

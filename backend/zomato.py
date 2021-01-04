@@ -85,14 +85,17 @@ RETURNS:
     - Dict which maps Collection ID => "Collection NAME"
 '''
 def form_collection_map(collections):
-    id_map, name_map = {} , {}
+    id_map, name_map, img_map = {} , {}, {}
     for item in collections['collections']:
+        entry = item['collection']
         #Store stats
-        idx, name = item['collection']['collection_id'], item['collection']['title']
+        idx, name, img_url = entry['collection_id'], entry['title'], entry['image_url']
         id_map[name] = idx
         name_map[idx] = name
+        #Store the image URL
+        img_map[idx] = img_url
 
-    return id_map, name_map
+    return id_map, name_map, img_map
 
 
 '''
