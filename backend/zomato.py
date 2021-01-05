@@ -139,16 +139,17 @@ def get_res_idx(restaurants):
     
     res_idx = []
     names = []
+    image_urls = []
 
     for res in restaurants['restaurants']:
 
         res = res['restaurant']
         #Store details
-        idx, name = res['id'], res['name']
-        res_idx.append(idx)
-        names.append(name)
+        res_idx.append(res['id'])
+        names.append(res['name'])
+        image_urls.append(res['featured_image'])
     
-    return res_idx, names
+    return res_idx, names, image_urls
 
 
 '''

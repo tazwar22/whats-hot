@@ -57,11 +57,11 @@ def get_restaurants():
     print("Getting.. {}".format(query_ID))
 
     restaurants = zomato.search_restaurants(search_city, collection_id = query_ID)
-    res_idx, res_names = zomato.get_res_idx(restaurants)
+    res_idx, res_names, res_imgs = zomato.get_res_idx(restaurants)
 
     #Query all restaurants for reviews
     mega_df = []
-    for res_id, name in zip(res_idx, res_names):
+    for res_id, name, img_url in zip(res_idx, res_names, res_imgs):
         #Pass in the restaurant ID
         reviews = zomato.get_reviews(res_id = res_id)
 
@@ -77,9 +77,9 @@ def get_restaurants():
         df = prep.update_prediction(df, Xtilde, clf)
         positivity = np.round(np.mean(df.prob_like), 2)*100
         
-        mega_df.append([res_id, name, positivity, len(df), star_rating, raw_reviews])
+        mega_df.append([res_id, name, positivity, raw_reviews, img_url])
         
-    mega_df = pd.DataFrame(mega_df, columns = ["id","name" ,"positivity","num_reviews", "star_rating","reviews"]).sort_values('positivity', ascending=False)
+    mega_df = pd.DataFrame(mega_df, columns = ["id","name" ,"positivity","reviews", "img_url"]).sort_values('positivity', ascending=False)
 
     return mega_df.to_json(orient='records')
 

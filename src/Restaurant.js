@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import './App.css';
 
 const Restaurant = (props) => {
-    const {name, positivity, reviews} = props.restaurant
+    const {name, positivity, reviews, img_url} = props.restaurant
     const [showReviews, setShowReviews] = useState(false)
 
     const clickHandler = () =>{
@@ -15,6 +15,7 @@ const Restaurant = (props) => {
                 <ul className="restaurant">
                     <li>Name: {name}</li>
                     <li>Positivity Score: {positivity}</li>
+                    <img src={img_url} alt="Restaurant"/>
                     <button type="button" onClick={()=>clickHandler()}> Hide User Reviews</button>
                     <ul>
                         {reviews.map((rev, ii)=>{
@@ -31,6 +32,7 @@ const Restaurant = (props) => {
             <ul className="restaurant">
                 <li>Name: {name}</li>
                 <li>Positivity Score: {positivity}</li>
+                <img src={img_url} alt="Restaurant"/>
                 <button type="button" onClick={()=>clickHandler()}> Show User Reviews</button>
             </ul>
             <hr></hr>
