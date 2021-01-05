@@ -25,7 +25,6 @@ def get_all_categories():
     
     return data
 
-
 '''
 Find a city by name and return the ID
 PARAMETERS:
@@ -50,7 +49,6 @@ def get_city(search_name):
     
     return city_id    
 
-
 '''
 Find a city by name and return the entire collection
 PARAMETERS:
@@ -74,8 +72,6 @@ def get_city_collections(search_name):
     
     return data
 
-
-
 '''
 Forms Collection Mapper
 PARAMETERS:
@@ -96,7 +92,6 @@ def form_collection_map(collections):
         img_map[idx] = img_url
 
     return id_map, name_map, img_map
-
 
 '''
 Find all restaurants with Given FLAG in Given City (eg. Vancouver)
@@ -126,7 +121,6 @@ def search_restaurants(search_name, collection_id):
     
     return data
 
-
 '''
 Retrieve Restaurant IDs and Names from RESULT of search_restaurants
 PARAMETERS:
@@ -142,16 +136,13 @@ def get_res_idx(restaurants):
     image_urls = []
 
     for res in restaurants['restaurants']:
-
         res = res['restaurant']
         #Store details
         res_idx.append(res['id'])
         names.append(res['name'])
         image_urls.append(res['featured_image'])
-        print(res['featured_image'])
     
     return res_idx, names, image_urls
-
 
 '''
 Gets most-recent 5 reviews for a given Restaurant ID
@@ -173,7 +164,6 @@ def get_reviews(res_id):
         print(r)
     
     return data   
-
 
 '''
 Forms DataFrame of reviews from given data for 1 Restaurant

@@ -27,7 +27,6 @@ print("Loaded scaler and models")
 #Specify City
 search_city = "Vancouver"
 
-
 @app.route('/hello')
 def say_hello_world():
     return {'result': "Hello World"}
@@ -48,7 +47,6 @@ def get_cusines():
         response.append(entry)
 
     return jsonify(response)
-
 
 @app.route('/api/restaurants')
 def get_restaurants():
@@ -82,5 +80,3 @@ def get_restaurants():
     mega_df = pd.DataFrame(mega_df, columns = ["id","name" ,"positivity","reviews", "img_url"]).sort_values('positivity', ascending=False)
 
     return mega_df.to_json(orient='records')
-
-    

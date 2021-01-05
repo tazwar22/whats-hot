@@ -1,15 +1,10 @@
-import os
 import numpy as np
-import json
 import re
 from nltk.stem.porter import PorterStemmer
 from gensim.models import Word2Vec
-import time
 
 #Paths
-root = os.getcwd()
 model_num = 50
-
 
 '''
 Preprocessing function
@@ -22,7 +17,6 @@ def keep_alphabets(text):
     text = re.sub('[^a-zA-Z]'," ",text) 
     return text
 
-
 '''
 Preprocessing function
 PARAMETERS:
@@ -32,7 +26,6 @@ RETURNS:
 '''
 def conv_to_lower(text):
     return text.lower()
-
 
 '''
 Preprocessing function
@@ -57,7 +50,6 @@ def remove_sw_and_stem(text):
     
     return text
 
-
 '''
 Preprocessing function
 PARAMETERS:
@@ -67,7 +59,6 @@ RETURNS:
 '''
 def tokenize(text):
     return text.split()
-
 
 '''
 Preprocessing function
@@ -118,7 +109,6 @@ def form_pred_matrix(df, scaler, w2vec):
     
     return X
 
-
 '''
 Update DataFrame with prediction
 PARAMETERS:
@@ -134,6 +124,3 @@ def update_prediction(df, X, clf):
     df['prob_like'] = clf.predict_proba(X)[:, 1]
     
     return df
-       
-
-
