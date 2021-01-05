@@ -148,6 +148,7 @@ def get_res_idx(restaurants):
         res_idx.append(res['id'])
         names.append(res['name'])
         image_urls.append(res['featured_image'])
+        print(res['featured_image'])
     
     return res_idx, names, image_urls
 

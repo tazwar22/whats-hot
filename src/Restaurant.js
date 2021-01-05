@@ -1,13 +1,19 @@
 import React, {useState} from 'react'
 import './App.css';
+import zomatoLogo from './zomato-logo.svg'
 
 const Restaurant = (props) => {
-    const {name, positivity, reviews, img_url} = props.restaurant
+    let {name, positivity, reviews, img_url} = props.restaurant
     const ord = props.num;
     const [showReviews, setShowReviews] = useState(false)
 
     const clickHandler = () =>{
         setShowReviews(!showReviews);
+    }
+
+    //For missing images
+    if (img_url === ""){
+        img_url = zomatoLogo;
     }
 
     if (showReviews){
