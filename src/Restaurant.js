@@ -13,15 +13,19 @@ const Restaurant = (props) => {
             return (
             <>
                 <ul className="restaurant">
-                    <li>Name: {name}</li>
-                    <li>Positivity Score: {positivity}</li>
-                    <img src={img_url} alt="Restaurant"/>
-                    <button type="button" onClick={()=>clickHandler()}> Hide User Reviews</button>
-                    <ul>
-                        {reviews.map((rev, ii)=>{
-                        return <li key={ii}>{rev}</li>
-                        })}
-                    </ul>
+                    <div className="resDetails">
+                        <li>Name: {name}</li>
+                        <li>Positivity Score: {positivity}</li>
+                        <img src={img_url} alt="Restaurant"/>
+                    </div>
+                    <div className="resReviews">
+                        <button type="button" onClick={()=>clickHandler()}> Hide User Reviews</button>
+                        <ul>
+                            {reviews.map((rev, ii)=>{
+                            return <li key={ii}>{rev}</li>
+                            })}
+                        </ul>
+                    </div>
                 </ul>
                 <hr></hr>
             </>
@@ -30,10 +34,14 @@ const Restaurant = (props) => {
          return (
         <>
             <ul className="restaurant">
-                <li>Name: {name}</li>
-                <li>Positivity Score: {positivity}</li>
-                <img src={img_url} alt="Restaurant"/>
-                <button type="button" onClick={()=>clickHandler()}> Show User Reviews</button>
+               <div className="resDetails">
+                    <li>Name: {name}</li>
+                    <li>Positivity Score: {positivity}</li>
+                    <img src={img_url} alt="Restaurant"/>
+                </div>
+                <div className="resReviews">
+                    <button type="button" onClick={()=>clickHandler()}> Hide User Reviews</button>
+                </div>
             </ul>
             <hr></hr>
         </>

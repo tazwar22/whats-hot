@@ -113,3 +113,11 @@ Cuisines and CuisinesList
   width: 30px;
   height: 30px;
 }
+
+.resDetails {
+  background-color: rgb(94, 82, 167);
+}
+
+.resReviews {
+  background-color: rgb(221, 125, 181);
+}
