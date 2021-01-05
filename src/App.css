@@ -146,4 +146,12 @@ Cuisines and CuisinesList
 
 .resReviews {
   background-color: rgb(221, 125, 181);
+  font-size: 150%;
+}
+
+.resReviews li {
+  background-color: rgb(155, 29, 102);
+  padding: 50px 20px;
+  margin: 20px 20px;
+  font-style: italic;
 }
