@@ -16,12 +16,12 @@ const Restaurant = (props) => {
                 <div className="restaurant">
                     <ul className="resDetails">
                         <li>{ord}</li>
-                        <li>{name}</li>
+                        <li style={{fontSize:"120%"}}>{name}</li>
                         <li>Positivity Score: <b>{positivity}</b> %</li>
                     </ul>
                     <img src={img_url} alt="Restaurant Image"/>
                     <div className="resReviews">
-                        <button type="button" onClick={()=>clickHandler()}> Hide User Reviews</button>
+                        <button type="button" className="btn" onClick={()=>clickHandler()}> Hide User Reviews</button>
                         <ul>
                             {reviews.map((rev, ii)=>{
                             return <li key={ii}>{rev}</li>
@@ -37,12 +37,12 @@ const Restaurant = (props) => {
             <div className="restaurant">
                <ul className="resDetails">
                     <li>{ord}</li>
-                    <li>{name}</li>
+                    <li style={{fontSize:"120%"}}>{name}</li>
                     <li>Positivity Score: <b>{positivity}</b> %</li>
                 </ul>
                 <img src={img_url} alt="Restaurant Image"/>
                 <div className="resReviews">
-                    <button type="button" onClick={()=>clickHandler()}> Hide User Reviews</button>
+                    <button type="button" className="btn" onClick={()=>clickHandler()}> Show User Reviews</button>
                 </div>
             </div>
         </>

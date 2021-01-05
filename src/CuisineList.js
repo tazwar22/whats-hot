@@ -55,7 +55,7 @@ const CuisineList = () => {
         return (
             <>
                 <RestaurantList queryID={cusID} name={cusName}></RestaurantList>
-                <button type="button" onClick={()=>setIsSelected(false)}>Search again</button>
+                <button type="button" className="btn" onClick={()=>setIsSelected(false)}>Search again</button>
             </>
         );
     }

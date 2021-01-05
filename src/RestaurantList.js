@@ -24,10 +24,10 @@ const RestaurantList = (props) => {
     }else{
         return (
                 <>
-                    <h1>Getting Restaurants... for {props.name}</h1>
-                    <ol className="restaurantsList">
+                    <h1 className="resListHeader">{props.name}</h1>
+                    <ol className="restaurantsList" style={{listStyle: "none"}}>
                         {restaurants.map((res, ii)=>{
-                            return <li key={res.id} style={{borderBottom: "3px solid #080708"}}><Restaurant restaurant={res} num={ii+1}></Restaurant></li>
+                            return <li key={res.id} style={{borderBottom: "0px solid #080708"}}><Restaurant restaurant={res} num={ii+1}></Restaurant></li>
                         })}
                     </ol>
                 </>

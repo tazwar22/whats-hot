@@ -97,19 +97,24 @@ Cuisines and CuisinesList
  ------------------------------*/
 
 .restaurantsList {
-  background-color: rgb(111, 200, 138);
+  /* background-color: rgb(111, 200, 138); */
   width: 90vw;
   max-width: 1140px;
   gap: 5rem;
   margin: 5rem auto;
 }
 
+.restaurantsList li {
+  background-color: rgb(243, 243, 243);
+  margin: 50px 2px;
+}
+
 .restaurant {
-  background-color: rgb(221, 178, 86);
+  /* background-color: rgb(221, 178, 86); */
 }
 
 .restaurant img {
-  background-color: rgb(197, 74, 74);
+  /* background-color: rgb(197, 74, 74); */
   width: 200px;
   height: 200px;
   object-fit: cover;
@@ -118,7 +123,7 @@ Cuisines and CuisinesList
 }
 
 .resDetails {
-  background-color: rgb(94, 82, 167);
+  /* background-color: rgb(94, 82, 167); */
   float: left;
   width: 50%;
   max-width: 1140px;
@@ -132,26 +137,40 @@ Cuisines and CuisinesList
   padding: 10px 0px;
   display: block;
   margin: 5px 10px;
+  font-style: italic;
 }
 
 /* the rank */
 .resDetails li:first-child {
-  background-color: springgreen;
+  /* background-color: springgreen; */
   border: 2px solid #000000;
   border-radius: 100px;
   width: 70px;
   margin: 50px 5px;
   float: left;
+  font-style: normal;
 }
 
 .resReviews {
-  background-color: rgb(221, 125, 181);
+  /* background-color: rgb(221, 125, 181); */
   font-size: 150%;
 }
 
 .resReviews li {
-  background-color: rgb(155, 29, 102);
+  background-color: rgb(243, 243, 243);
   padding: 50px 20px;
   margin: 20px 20px;
   font-style: italic;
+}
+
+.btn {
+  width: 400px;
+  height: 50px;
+  padding: 2px 5px;
+  margin: 20px 5px;
+  font-size: 120%;
+}
+
+.resListHeader {
+  font-size: 300%;
 }
