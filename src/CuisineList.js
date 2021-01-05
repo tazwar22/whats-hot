@@ -45,7 +45,7 @@ const CuisineList = () => {
                                     <a href="#" onClick={()=>handleClick(id, name)}>{name}</a>
                                     <p>{description}</p>
                                 </div>
-                                <img src={image_url} alt="Food"></img>
+                                <img src={image_url} alt="Food" onClick={()=>handleClick(id, name)}></img>
                             </li>
                 })}
                 </ul>  
