@@ -50,7 +50,6 @@ body {
 Cuisines and CuisinesList 
  ------------------------------*/
 .cuisinesList {
-  /* background-color: rgb(177, 218, 139); */
   width: 90vw;
   max-width: 60%;
   margin: 5rem 20%;
@@ -74,7 +73,6 @@ Cuisines and CuisinesList
 }
 
 .cuisineInfo {
-  /* background-color: sandybrown; */
   float: left;
   width: 500px;
   max-width: 1140px;
@@ -86,7 +84,6 @@ Cuisines and CuisinesList
 
 .cuisineInfo a {
   font-size: 180%;
-  /* border-bottom: 20px solid #000; */
   padding-bottom: 20px;
   color: #000000;
 }
@@ -106,7 +103,6 @@ Cuisines and CuisinesList
  ------------------------------*/
 
 .restaurantsList {
-  /* background-color: rgb(111, 200, 138); */
   width: 90vw;
   max-width: 1140px;
   gap: 5rem;
@@ -118,12 +114,7 @@ Cuisines and CuisinesList
   margin: 50px 2px;
 }
 
-.restaurant {
-  /* background-color: rgb(221, 178, 86); */
-}
-
 .restaurant img {
-  /* background-color: rgb(197, 74, 74); */
   width: 200px;
   height: 200px;
   object-fit: cover;
@@ -132,7 +123,6 @@ Cuisines and CuisinesList
 }
 
 .resDetails {
-  /* background-color: rgb(94, 82, 167); */
   float: left;
   width: 50%;
   max-width: 1140px;
@@ -151,7 +141,6 @@ Cuisines and CuisinesList
 
 /* the rank */
 .resDetails li:first-child {
-  /* background-color: springgreen; */
   border: 2px solid #000000;
   border-radius: 100px;
   width: 70px;
@@ -161,7 +150,6 @@ Cuisines and CuisinesList
 }
 
 .resReviews {
-  /* background-color: rgb(221, 125, 181); */
   font-size: 150%;
 }
 
