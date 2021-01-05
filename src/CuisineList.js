@@ -36,7 +36,7 @@ const CuisineList = () => {
     } else if (!isSelected){
         return (
             <div>
-                <h1>Cuisines in Vancouver (BC)</h1>
+                <h1 className="sectionHeader">Cuisines in Vancouver (BC)</h1>
                 <ul  className="cuisinesList">
                 {data.map((cuisine)=>{
                     const {id, name, image_url, description} = cuisine;
