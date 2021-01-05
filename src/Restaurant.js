@@ -12,12 +12,12 @@ const Restaurant = (props) => {
     if (showReviews){
             return (
             <>
-                <ul className="restaurant">
+                <div className="restaurant">
                     <div className="resDetails">
-                        <li>Name: {name}</li>
+                        <li>{name}</li>
                         <li>Positivity Score: {positivity}</li>
-                        <img src={img_url} alt="Restaurant"/>
                     </div>
+                    <img src={img_url} alt="Restaurant Image"/>
                     <div className="resReviews">
                         <button type="button" onClick={()=>clickHandler()}> Hide User Reviews</button>
                         <ul>
@@ -26,24 +26,22 @@ const Restaurant = (props) => {
                             })}
                         </ul>
                     </div>
-                </ul>
-                <hr></hr>
+                </div>
             </>
         );
     } else {
          return (
         <>
-            <ul className="restaurant">
+            <div className="restaurant">
                <div className="resDetails">
-                    <li>Name: {name}</li>
+                    <li>{name}</li>
                     <li>Positivity Score: {positivity}</li>
-                    <img src={img_url} alt="Restaurant"/>
                 </div>
+                <img src={img_url} alt="Restaurant Image"/>
                 <div className="resReviews">
                     <button type="button" onClick={()=>clickHandler()}> Hide User Reviews</button>
                 </div>
-            </ul>
-            <hr></hr>
+            </div>
         </>
         );
     }

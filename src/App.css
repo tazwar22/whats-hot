@@ -105,17 +105,32 @@ Cuisines and CuisinesList
 }
 
 .restaurant {
-  background-color: rgb(146, 128, 128);
+  background-color: rgb(221, 178, 86);
 }
 
 .restaurant img {
   background-color: rgb(197, 74, 74);
-  width: 30px;
-  height: 30px;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  margin: 5% 1% 5% 0px;
+  border-radius: 80px;
 }
 
 .resDetails {
   background-color: rgb(94, 82, 167);
+  float: left;
+  width: 50%;
+  max-width: 1140px;
+  overflow: hidden;
+  padding: 2px 15px;
+  margin: 5% 0px 5% 0px;
+  font-size: 200%;
+}
+
+.resDetails li {
+  padding: 10px 0px;
+  display: block;
 }
 
 .resReviews {

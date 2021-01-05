@@ -27,7 +27,7 @@ const RestaurantList = (props) => {
                     <h1>Getting Restaurants... for {props.name}</h1>
                     <ol className="restaurantsList">
                         {restaurants.map((res)=>{
-                            return <li key={res.id}><Restaurant restaurant={res}></Restaurant></li>
+                            return <li key={res.id} style={{borderBottom: "3px solid #080708"}}><Restaurant restaurant={res}></Restaurant></li>
                         })}
                     </ol>
                 </>
