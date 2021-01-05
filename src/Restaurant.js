@@ -17,7 +17,7 @@ const Restaurant = (props) => {
                     <ul className="resDetails">
                         <li>{ord}</li>
                         <li>{name}</li>
-                        <li>Positivity Score: {positivity}</li>
+                        <li>Positivity Score: <b>{positivity}</b> %</li>
                     </ul>
                     <img src={img_url} alt="Restaurant Image"/>
                     <div className="resReviews">
@@ -38,7 +38,7 @@ const Restaurant = (props) => {
                <ul className="resDetails">
                     <li>{ord}</li>
                     <li>{name}</li>
-                    <li>Positivity Score: {positivity}</li>
+                    <li>Positivity Score: <b>{positivity}</b> %</li>
                 </ul>
                 <img src={img_url} alt="Restaurant Image"/>
                 <div className="resReviews">

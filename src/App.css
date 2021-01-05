@@ -114,7 +114,7 @@ Cuisines and CuisinesList
   height: 200px;
   object-fit: cover;
   margin: 5% 1% 5% 0px;
-  border-radius: 80px;
+  border-radius: 200px;
 }
 
 .resDetails {
@@ -131,6 +131,17 @@ Cuisines and CuisinesList
 .resDetails li {
   padding: 10px 0px;
   display: block;
+  margin: 5px 10px;
+}
+
+/* the rank */
+.resDetails li:first-child {
+  background-color: springgreen;
+  border: 2px solid #000000;
+  border-radius: 100px;
+  width: 70px;
+  margin: 50px 5px;
+  float: left;
 }
 
 .resReviews {
