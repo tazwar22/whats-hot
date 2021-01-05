@@ -3,6 +3,7 @@ import './App.css';
 
 const Restaurant = (props) => {
     const {name, positivity, reviews, img_url} = props.restaurant
+    const ord = props.num;
     const [showReviews, setShowReviews] = useState(false)
 
     const clickHandler = () =>{
@@ -13,10 +14,11 @@ const Restaurant = (props) => {
             return (
             <>
                 <div className="restaurant">
-                    <div className="resDetails">
+                    <ul className="resDetails">
+                        <li>{ord}</li>
                         <li>{name}</li>
                         <li>Positivity Score: {positivity}</li>
-                    </div>
+                    </ul>
                     <img src={img_url} alt="Restaurant Image"/>
                     <div className="resReviews">
                         <button type="button" onClick={()=>clickHandler()}> Hide User Reviews</button>
@@ -33,10 +35,11 @@ const Restaurant = (props) => {
          return (
         <>
             <div className="restaurant">
-               <div className="resDetails">
+               <ul className="resDetails">
+                    <li>{ord}</li>
                     <li>{name}</li>
                     <li>Positivity Score: {positivity}</li>
-                </div>
+                </ul>
                 <img src={img_url} alt="Restaurant Image"/>
                 <div className="resReviews">
                     <button type="button" onClick={()=>clickHandler()}> Hide User Reviews</button>

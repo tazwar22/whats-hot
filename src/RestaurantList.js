@@ -26,8 +26,8 @@ const RestaurantList = (props) => {
                 <>
                     <h1>Getting Restaurants... for {props.name}</h1>
                     <ol className="restaurantsList">
-                        {restaurants.map((res)=>{
-                            return <li key={res.id} style={{borderBottom: "3px solid #080708"}}><Restaurant restaurant={res}></Restaurant></li>
+                        {restaurants.map((res, ii)=>{
+                            return <li key={res.id} style={{borderBottom: "3px solid #080708"}}><Restaurant restaurant={res} num={ii+1}></Restaurant></li>
                         })}
                     </ol>
                 </>
