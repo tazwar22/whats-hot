@@ -27,10 +27,6 @@ print("Loaded scaler and models")
 #Specify City
 search_city = "Vancouver"
 
-@app.route('/hello')
-def say_hello_world():
-    return {'result': "Hello World"}
-
 @app.route('/api/cuisines')
 def get_cusines():
 
